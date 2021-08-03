@@ -1,7 +1,6 @@
 
 <template>
   <div class="home" id="home">
-    <Header/>
     <Banner/>
     <HelloWorld msg="Technovation Girls Registration"/>
     <ContactUs/>
@@ -11,7 +10,6 @@
 
 <script>
 import HelloWorld from '../components/HelloWorld.vue'
-import Header from "../components/Header";
 import Banner from "../components/Banner";
 import Footer from "../components/Footer";
 import ContactUs from "../components/ContactUs";
@@ -21,7 +19,6 @@ export default {
   name: 'Home',
   components: {
     HelloWorld,
-    Header,
     Banner,
     Footer,
     ContactUs,
