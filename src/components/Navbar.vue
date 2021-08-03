@@ -88,13 +88,4 @@ nav {
  #tg-logo{
    width: 13rem;
  }
-
- .energetic-blue{
-   background: #0075cf;
- }
-
- .energetic-blue:hover{
-   background: #539aef;
-
- }
 </style>

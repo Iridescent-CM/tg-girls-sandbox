@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Rubik:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Rubik:wght@400;500;600;700;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,4 +12,30 @@
         @apply block text-sm px-2 py-4 hover:bg-blue-500 hover:text-white transition duration-300;
     }
 
+    .energetic-blue{
+        background: #0075cf;
+    }
+
+    .energetic-blue:hover{
+        background: #539aef;
+
+    }
+
+    .tg-green{
+        background: #43b02a;
+    }
+
+    .tg-green-stripes{
+        background: repeating-linear-gradient(
+                45deg,
+                #5FBC4A,
+                #5FBC4A 10px,
+                #43b02a 10px,
+                #43b02a 26px
+        );
+    }
+
+    .rubik{
+        font-family: 'RUBIK', sans-serif;
+    }
 }
