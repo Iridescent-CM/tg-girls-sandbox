@@ -1,10 +1,8 @@
 <template>
-  <div class="container mx-auto max-w-2xl border-energetic-blue rounded-md">
-    <div class="energetic-blue">
-      <h4 class="text-left font-extrabold p-4 text-white"> Your Profile Type</h4>
-    </div>
+  <div class="registration-container" id="step-one">
+    <ContainerHeader header-text="Your Profile Type"/>
     <FormulateForm  @submit="submitted" class="p-8">
-      <h2 class="text-2xl mb-2 text-left font-semibold">I am a...</h2>
+      <h2 class="registration-title">I am a...</h2>
       <FormulateInput
           label-position="before"
           type="radio"
@@ -25,8 +23,10 @@
 
 
 <script>
+import ContainerHeader from "./ContainerHeader";
 export default {
-  name: 'RegistrationForm',
+  name: 'StepOne',
+  components: {ContainerHeader},
   data() {
     return {
       values: {},
