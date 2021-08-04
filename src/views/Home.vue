@@ -2,26 +2,26 @@
 <template>
   <div class="home" id="home">
     <Banner/>
-    <HelloWorld msg="Technovation Girls Registration"/>
+    <RegistrationForm/>
     <ContactUs/>
     <Footer/>
   </div>
 </template>
 
 <script>
-import HelloWorld from '../components/HelloWorld.vue'
 import Banner from "../components/Banner";
 import Footer from "../components/Footer";
 import ContactUs from "../components/ContactUs";
+import RegistrationForm from "../components/RegistrationForm";
 
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld,
     Banner,
     Footer,
     ContactUs,
+    RegistrationForm
   }
 }
 </script>
