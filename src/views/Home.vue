@@ -2,7 +2,8 @@
 <template>
   <div class="home" id="home">
     <Banner/>
-    <RegistrationForm/>
+    <StepOne/>
+    <StepTwo/>
     <ContactUs/>
     <Footer/>
   </div>
@@ -12,7 +13,8 @@
 import Banner from "../components/Banner";
 import Footer from "../components/Footer";
 import ContactUs from "../components/ContactUs";
-import RegistrationForm from "../components/RegistrationForm";
+import StepOne from "../components/StepOne";
+import StepTwo from "../components/StepTwo";
 
 
 export default {
@@ -21,7 +23,8 @@ export default {
     Banner,
     Footer,
     ContactUs,
-    RegistrationForm
+    StepOne,
+    StepTwo
   }
 }
 </script>
