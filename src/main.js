@@ -13,7 +13,7 @@ const htmlCustomLabelComponent = {
   props: ["context"],
   template: `
     <label
-      :class="[context.classes.label, 'radio-label']"
+      :class="[context.classes.label, 'input-label-text']"
       :for="context.id"
       v-html="context.label"
     />
