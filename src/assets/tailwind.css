@@ -4,6 +4,10 @@
 @tailwind utilities;
 
 @layer components {
+    .registration-btns{
+        @apply px-4 py-2 rounded bg-green-500 text-white hover:bg-green-600
+    }
+
     .registration-nav{
         @apply py-4 px-2 hover:text-blue-500 transition duration-300;
     }
@@ -20,9 +24,13 @@
         @apply text-2xl mb-2 text-left font-semibold;
     }
 
-    #step-two input{
+    #step-two input, #step-four input{
         @apply border border-gray-400 rounded px-3 py-2 leading-none focus:border-green-500 outline-none w-full mb-1
     }
+
+    /*#step-four input{*/
+    /*    @apply border border-gray-400 rounded px-3 py-2 leading-none focus:border-green-500 outline-none w-full mb-1*/
+    /*}*/
 
     .name-group {
         @apply flex justify-between;
@@ -45,6 +53,10 @@
         background: #43b02a;
     }
 
+    .text-tg-green{
+        color: #43b02a;
+    }
+
     .tg-green-stripes{
         background: repeating-linear-gradient(
                 45deg,
@@ -61,11 +73,10 @@
 
     .border-energetic-blue{
         border: 4px solid #539aef;
-
-
     }
 
     .form-wrapper{
-        @apply p-4
+        @apply p-6
     }
+
 }
