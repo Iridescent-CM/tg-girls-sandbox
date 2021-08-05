@@ -4,7 +4,7 @@
     <ContainerHeader header-text="Set your email and password"/>
 
     <div id="email-password" class="form-wrapper">
-      <h1 class="text-tg-green text-3xl text-left mb-6">This is an account for ________ division</h1>
+      <h1 class="text-tg-green text-2xl text-left mb-6">This is an account for ________ division</h1>
 
 <!--      <h2 class="registration-title">Email Address</h2>-->
       <FormulateInput
