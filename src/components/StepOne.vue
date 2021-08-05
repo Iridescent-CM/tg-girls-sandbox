@@ -1,24 +1,19 @@
 <template>
-  <div class="registration-container" id="step-one">
+  <div id="step-one">
     <ContainerHeader header-text="Your Profile Type"/>
-    <FormulateForm  @submit="submitted" class="p-8">
+
+    <div id="profile-type" class="form-wrapper">
       <h2 class="registration-title">I am a...</h2>
-      <FormulateInput
-          label-position="before"
-          type="radio"
-          class="profile-type"
-          :options="options"
 
-      />
-      <FormulateInput
-          input-class="px-4 py-2 rounded bg-green-500 text-white hover:bg-green-600"
-          type="submit"
-      />
-<!--      <pre class="mt-8 p-2 bg-gray-200 whitespace-pre text-sm">{{ values }}</pre>-->
-    </FormulateForm>
-
+        <FormulateInput
+            label-position="before"
+            type="radio"
+            class="profile-type"
+            :options="options"
+        />
+    </div>
+      <!--      <pre class="mt-8 p-2 bg-gray-200 whitespace-pre text-sm">{{ values }}</pre>-->
   </div>
-
 </template>
 
 
@@ -46,6 +41,7 @@ export default {
       ],
     };
   },
+
 }
 </script>
 
