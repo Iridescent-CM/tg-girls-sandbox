@@ -3,13 +3,28 @@
 
     <div v-show="step === 1">
       <StepOne/>
-      <button @click.prevent="next()" class="px-4 py-2 rounded bg-green-500 text-white hover:bg-green-600">Next</button>
+      <NextButton @next="next()"/>
     </div>
 
     <div v-show="step === 2">
       <StepTwo/>
-      <button @click.prevent="prev()" class="px-4 py-2 rounded bg-green-500 text-white hover:bg-green-600">Previous</button>
-      <button @click.prevent="next()" class="px-4 py-2 rounded bg-green-500 text-white hover:bg-green-600">Next</button>
+      <div class="registration-btn-wrapper">
+        <PreviousButton @prev="prev()"/>
+        <NextButton @next="next()"/>
+      </div>
+    </div>
+
+    <div v-show="step === 3">
+      <StepThree/>
+      <div class="registration-btn-wrapper">
+        <PreviousButton @prev="prev()"/>
+        <NextButton @next="next()"/>
+      </div>
+    </div>
+
+    <div v-show="step === 4">
+      <StepFour/>
+      <PreviousButton @prev="prev()"/>
     </div>
 
   </FormulateForm>
@@ -18,11 +33,19 @@
 <script>
 import StepOne from "./StepOne";
 import StepTwo from "./StepTwo";
+import StepThree from "./StepThree";
+import StepFour from "./StepFour";
+import PreviousButton from "./PreviousButton";
+import NextButton from "../../NextButton";
 export default {
   name: "FormWrapper.vue",
   components:{
     StepOne,
-    StepTwo
+    StepTwo,
+    StepThree,
+    StepFour,
+    PreviousButton,
+    NextButton
   },
   data(){
     return {
@@ -41,5 +64,7 @@ export default {
 </script>
 
 <style scoped>
-
+.registration-btn-wrapper{
+  @apply flex p-6 justify-between;
+}
 </style>
