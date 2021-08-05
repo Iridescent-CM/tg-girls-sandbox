@@ -1,3 +1,45 @@
 <template>
-<h3>Here is contact us information</h3>
+  <div id="contact-us" class="max-w-6xl mx-auto text-left">
+    <section id="info">
+      <h2 class="registration-title rubik font-black text-4xl"> CONTACT US</h2>
+      <p>To learn more about our programs and research, howe we work with partners, or to create a partnership tailored to fit your organization's needs.</p>
+    </section>
+
+    <section id="links" class="flex justify-between my-12">
+      <div id="icons" class="flex w-48 justify-between">
+        <img src="../assets/instagram.png" alt="" class="social-icon">
+        <img src="../assets/fb.png" alt="" class="social-icon">
+        <img src="../assets/twitter.png" alt="" class="social-icon">
+        <img src="../assets/youtube.png" alt="" class="social-icon">
+      </div>
+
+      <div id="site-links" class="flex flex-wrap w-1/2">
+        <a href="#" class="site-link">FAQ</a>
+        <a href="#" class="site-link">Contact</a>
+        <a href="#" class="site-link">Terms of Use</a>
+        <a href="#" class="site-link">Press</a>
+        <a href="#" class="site-link">Privacy Policy</a>
+        <a href="#" class="site-link">Donate</a>
+      </div>
+    </section>
+
+  </div>
 </template>
+
+<script>
+export default {
+  name: 'ContactUs'
+}
+</script>
+
+<style scoped>
+.social-icon{
+  width: 40px;
+  height: 40px;
+}
+
+.site-link{
+  margin: 5px;
+  width: calc(100% * (1/4) - 10px - 1px);
+}
+</style>
