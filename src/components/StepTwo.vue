@@ -4,7 +4,8 @@
 
     <div id="student-information" class="form-wrapper">
 
-      <h2 class="registration-title">Student Information</h2>
+      <h2 v-if="formValues.profileType === 'mentor'" class="registration-title">Mentor Information</h2>
+      <h2 v-else class="registration-title">Student Information</h2>
 
       <div class="formulate-input-wrapper name-group">
         <FormulateInput
