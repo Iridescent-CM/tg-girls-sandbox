@@ -10,6 +10,7 @@
             type="radio"
             class="profile-type"
             :options="options"
+            name="profileType"
         />
     </div>
       <!--      <pre class="mt-8 p-2 bg-gray-200 whitespace-pre text-sm">{{ values }}</pre>-->
@@ -41,7 +42,7 @@ export default {
       ],
     };
   },
-
+  props: ['formValues']
 }
 </script>
 
