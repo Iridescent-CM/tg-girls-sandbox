@@ -46,12 +46,12 @@
       />
     </div>
 
-    <div id="parent-information" class="form-wrapper">
+    <div id="parent-information" class="form-wrapper" v-if="formValues.profileType !== 'mentor'">
       <h2 class="registration-title">Parent Information</h2>
 
       <div class="formulate-input-wrapper name-group">
         <FormulateInput
-            name="parent-first-name"
+            name="parentFirstName"
             type="text"
             label="First Name"
             placeholder="Parent First Name"
@@ -60,7 +60,7 @@
         />
 
         <FormulateInput
-            name="parent-last-name"
+            name="parentLastName"
             type="text"
             label="Last Name"
             placeholder="Parent Last Name"
@@ -70,22 +70,19 @@
       </div>
 
       <FormulateInput
-          name="parent-email"
+          v-if="formValues.profileType === 'parent'"
+          name="parentEmail"
           type="email"
-          label="Email Address"
+          label="Parent Email Address"
           placeholder="Parent Email address"
           validation="required|email"
+          :value="formValues.profileType === 'parent' ? formValues.parentEmail : ''"
       />
 
       <FormulateInput
           name="technovation-hear-about"
           type="text"
           label="How did you hear about Technovation? (Optional)"
-      />
-
-      <pre
-          class="code"
-          v-text="formValues"
       />
 
     </div>
@@ -97,6 +94,7 @@ import ContainerHeader from "./ContainerHeader";
 export default {
   name: "StepTwo",
   components: {ContainerHeader},
+  props: ['formValues']
 }
 </script>
 
