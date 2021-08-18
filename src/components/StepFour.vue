@@ -4,24 +4,22 @@
     <ContainerHeader header-text="Set your email and password"/>
 
     <div id="email-password" class="form-wrapper">
-      <h1 class="text-tg-green text-2xl text-left mb-6">This is an account for ________ division</h1>
+      <h1 class="text-tg-green text-2xl text-left mb-6" v-if="formValues.profileType === 'parent'">This is an account for beginners division</h1>
 
-<!--      <h2 class="registration-title">Email Address</h2>-->
       <FormulateInput
-          name="email"
+          name="accountEmail"
           type="email"
-          label="Email Address"
+          :label="formValues.profileType === 'parent' ? 'Parent Email Address' : 'Email Address'"
           placeholder="Email address"
           validation="required|email"
-          class="flex-grow"
+          class="flex-grow "
+          id="accountEmail"
+          v-model="setAccountEmailForParentProfile"
       />
 
       <p class="text-left text-sm mb-12">Please choose a personal, permanent email. A school or company email might block us from sending important messages to you.</p>
 
       <div class="double-wide">
-
-<!--        <h2 class="registration-title">Password</h2>-->
-
         <FormulateInput
             name="password"
             type="password"
@@ -43,6 +41,28 @@ export default {
   name: "StepFour",
   components: {
     ContainerHeader
+  },
+  props: ['formValues'],
+  computed:{
+    setAccountEmailForParentProfile: {
+      get(){
+        if (this.formValues.parentEmail && this.formValues.profileType === "parent") {
+          return this.formValues.parentEmail
+        } else {
+          return  this.formValues.accountEmail
+        }
+      },
+      set(accountEmailVal){
+
+        if (this.formValues.parentEmail && this.formValues.profileType === "parent") {
+          document.getElementById("accountEmail").disabled = true
+        } else{
+          document.getElementById("accountEmail").disabled = false
+        }
+
+        this.formValues.accountEmail = accountEmailVal
+      }
+    }
   }
 }
 </script>
