@@ -1,13 +1,18 @@
 <template>
-  <FormulateForm class="registration-container pb-6"  @submit="submitted" >
+  <FormulateForm
+      class="registration-container pb-6"
+      v-model="formValues"
+      @submit="submitHandler"
+      #default="{ isLoading }"
+  >
 
     <div v-show="step === 1">
-      <StepOne/>
+      <StepOne :form-values="formValues"/>
       <NextButton @next="next()"/>
     </div>
 
     <div v-show="step === 2">
-      <StepTwo/>
+      <StepTwo :form-values="formValues"/>
       <div class="registration-btn-wrapper">
         <PreviousButton @prev="prev()"/>
         <NextButton @next="next()"/>
@@ -15,7 +20,7 @@
     </div>
 
     <div v-show="step === 3">
-      <StepThree/>
+      <StepThree :form-values="formValues"/>
       <div class="registration-btn-wrapper">
         <PreviousButton @prev="prev()"/>
         <NextButton @next="next()"/>
@@ -23,9 +28,20 @@
     </div>
 
     <div v-show="step === 4">
-      <StepFour/>
+      <StepFour :form-values="formValues"/>
       <PreviousButton @prev="prev()"/>
+
+      <FormulateInput
+          type="submit"
+          :disabled="isLoading"
+          :label="isLoading ? 'Loading...' : 'Submit this form'"
+      />
     </div>
+
+    <pre
+        class="code"
+        v-text="formValues"
+    />
 
   </FormulateForm>
 </template>
@@ -37,6 +53,7 @@ import StepThree from "./StepThree";
 import StepFour from "./StepFour";
 import PreviousButton from "./PreviousButton";
 import NextButton from "../../NextButton";
+import axios from "axios";
 export default {
   name: "FormWrapper.vue",
   components:{
@@ -50,6 +67,7 @@ export default {
   data(){
     return {
       step: 1,
+      formValues: {}
     }
   },
   methods: {
@@ -58,6 +76,17 @@ export default {
     },
     next() {
       this.step++;
+    },
+    async submitHandler (data) {
+      console.log(data);
+
+      // not a parent
+      if(data.profileType !== "parent"){
+        data.parentEmail = false
+      }
+      await axios.post('https://hookb.in/6JlDz7LKwGhoRnwwRZNW', data)
+          .then(response => console.log(response))
+
     }
   }
 }

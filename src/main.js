@@ -4,10 +4,16 @@ import './assets/tailwind.css';
 import VueFormulate from '@braid/vue-formulate'
 import router from './router'
 import "../node_modules/@braid/vue-formulate/dist/snow.min.css";
+import VueAxios from 'vue-axios'
+import axios from 'axios';
+
+
 
 Vue.config.productionTip = false
 
 // Vue.use(VueFormulate.default)
+Vue.use(VueAxios, axios)
+
 
 const htmlCustomLabelComponent = {
   props: ["context"],
