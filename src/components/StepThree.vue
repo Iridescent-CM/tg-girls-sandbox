@@ -46,10 +46,9 @@
 
       <section class="contract-section" id="agree-checkbox">
         <FormulateInput
-            v-model="value"
             type="checkbox"
             label="I AGREE TO THESE DATA USE TERMS"
-            id="contract-label"
+            name="contract-label"
         />
       </section>
 
@@ -64,7 +63,8 @@ export default {
   name: "StepThree",
   components: {
     ContainerHeader
-  }
+  },
+  props: ['formValues']
 }
 </script>
 
