@@ -4,6 +4,7 @@
       v-model="formValues"
       @submit="submitHandler"
       #default="{ isLoading }"
+      :invalid-message="invalidMessage"
   >
 
     <div v-show="step === 1">
@@ -29,13 +30,19 @@
 
     <div v-show="step === 4">
       <StepFour :form-values="formValues"/>
-      <PreviousButton @prev="prev()"/>
 
-      <FormulateInput
-          type="submit"
-          :disabled="isLoading"
-          :label="isLoading ? 'Loading...' : 'Submit this form'"
-      />
+      <FormulateErrors />
+
+      <div class="registration-btn-wrapper">
+        <PreviousButton @prev="prev()"/>
+        <FormulateInput
+            type="submit"
+            :disabled="isLoading"
+            :label="isLoading ? 'Submitting...' : 'Submit this form'"
+            class="registration-btns"
+        />
+      </div>
+
     </div>
 
     <pre
@@ -87,6 +94,16 @@ export default {
       await axios.post('https://hookb.in/6JlDz7LKwGhoRnwwRZNW', data)
           .then(response => console.log(response))
 
+      alert(`Thank you, ${data.firstName}... redirecting somewhere!`)
+
+    },
+    invalidMessage(fields) {
+      const fieldNames = Object.keys(fields)
+      const listOfNames = fieldNames.map(fieldName => {
+        return fieldName.replace(/([a-z](?=[A-Z]))/g, '$1 ').replace(/^./, function(str){ return str.toUpperCase(); })
+      })
+
+      return `Invalid fields: ${listOfNames.map(name => ` ${name}`)}`
     }
   }
 }
