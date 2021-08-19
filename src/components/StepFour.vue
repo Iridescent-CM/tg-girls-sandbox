@@ -11,10 +11,11 @@
           type="email"
           :label="formValues.profileType === 'parent' ? 'Parent Email Address' : 'Email Address'"
           placeholder="Email address"
-          validation="required|email"
+          validation="required"
           class="flex-grow "
           id="accountEmail"
           v-model="setAccountEmailForParentProfile"
+          :validation-messages="{required: 'Email address is required.'}"
       />
 
       <p class="text-left text-sm mb-12">Please choose a personal, permanent email. A school or company email might block us from sending important messages to you.</p>

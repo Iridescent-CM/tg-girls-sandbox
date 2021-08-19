@@ -11,6 +11,7 @@
             class="profile-type"
             :options="options"
             name="profileType"
+            validation="required"
         />
     </div>
       <!--      <pre class="mt-8 p-2 bg-gray-200 whitespace-pre text-sm">{{ values }}</pre>-->

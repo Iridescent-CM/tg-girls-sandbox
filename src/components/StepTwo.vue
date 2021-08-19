@@ -9,7 +9,7 @@
 
       <div class="formulate-input-wrapper name-group">
         <FormulateInput
-            name="first-name"
+            name="firstName"
             type="text"
             label="First Name"
             placeholder="First Name"
@@ -18,7 +18,7 @@
         />
 
         <FormulateInput
-            name="last-name"
+            name="lastName"
             type="text"
             label="Last Name"
             placeholder="Last Name"
@@ -34,11 +34,11 @@
           label="Birthday"
           placeholder="Student Birthday"
           error-behavior="live"
-
+          validation="required"
       />
 
       <FormulateInput
-          name="school-name"
+          name="schoolName"
           type="text"
           label="School Name"
           placeholder="School Name"
