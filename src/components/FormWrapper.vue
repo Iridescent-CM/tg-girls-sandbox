@@ -59,7 +59,7 @@ import StepTwo from "./StepTwo";
 import StepThree from "./StepThree";
 import StepFour from "./StepFour";
 import PreviousButton from "./PreviousButton";
-import NextButton from "../../NextButton";
+import NextButton from "./NextButton";
 import axios from "axios";
 export default {
   name: "FormWrapper.vue",
