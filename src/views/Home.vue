@@ -1,6 +1,6 @@
 <template>
   <div class="home" id="home">
-    <Banner/>
+    <Banner banner-text="PROFILE SETUP"/>
     <FormWrapper/>
     <div id="thick-rule" class="bg-energetic-blue h-6 my-16"></div>
     <ContactUs/>
